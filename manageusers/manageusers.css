@@ -228,7 +228,7 @@ header {
     cursor: pointer;
     display: block;
     margin-bottom: 10px;
-    color: white;
+    color: #ffffff;
 }
 .bottom-nav-button:hover {
     color: rgba(6,174,212,1);
