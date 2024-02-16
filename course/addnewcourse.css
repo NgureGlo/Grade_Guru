@@ -1,0 +1,98 @@
+body {
+    background-color: rgba(28,25,23,1);
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+header {
+    background:rgba(63,63,70,1);
+    color: white;
+    flex: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 0px 4px 0px;
+    font-size: 10px;
+    overflow: hidden;
+    position: relative;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    height: fit-content;
+
+}
+.header-left{
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+}
+
+.back-button {
+    font-size: 16px;
+    margin-right: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    /* color: white; */
+}
+
+#submitButton {
+    width: 5%;
+    padding: 10px;
+    border: none;
+    margin-left: 0px;
+    margin-right: 300px;
+    margin-top: 50px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    background: rgba(6,174,212,1);
+}
+
+#cancelButton {
+    width: 5%;
+    padding: 10px;
+    border: none;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 50px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    background: rgba(6,174,212,1);
+}
+
+label {
+    color:rgba(121,113,107,1);
+    font-size:16px; font-weight:600;
+    width: 100%;
+    display: flex;
+    position: relative;
+    top: 0px; left: 400px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+input,
+select {
+    width: 30%;
+    padding:8px 12px 8px 12px;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    position: relative;
+    top: 0px; left: 400px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(41, 37, 36);
+    font-size:16px;
+    font-weight:400;
+}

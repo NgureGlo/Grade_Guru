@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add</title>
+    <link rel="stylesheet" href="addnewuser.css">
+</head>
+<body>
+    <header>
+
+        <div class="header-left">
+            <button class="back-button" onclick="window.location.href='manageusers.html';"><i class="fa fa-back"><img src="https://figma-files-public.s3.amazonaws.com/dba19db7f1f90864dea50ce6/89fe1a1f-f5d2-4b61-8c33-eef574bb8902" alt="Back"></i></button>
+            <h1>Add</h1>
+        </div>
+
+    </header>
+
+    <form>
+        <form id="addnewuser-form" class="active"></form>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="">
+        </div>
+
+        <div class="form-group">
+            <label for="profilePhoto">Profile Photo</label>
+            <button class="profilePhoto-button">Upload Image</button>
+        </div>
+
+        <div class="form-group">
+            <label for="role">Role</label>
+            <select id="role">
+                <option value="Select Role">Select Role</option>
+                <option value="Administrator">Administrator</option>
+                <option value="Educator">Educator</option>
+            </select>
+        </div>
+
+        <button id="cancelButton">Cancel</button> 
+        <button id="submitButton">Submit</button> 
+    </div>
+
+    <script src="addnewuser.js"></script>    
+</body>
+</html>

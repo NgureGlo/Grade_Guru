@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Performance Predictor</title>
+    <link rel="stylesheet" href="manageusers.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+          <button class="hamburger-menu" onclick="toggleMenu()"><img src="https://figma-files-public.s3.amazonaws.com/dba19db7f1f90864dea50ce6/f33b666c-00bd-4768-895d-0fd9aded58be"></button>
+          <h1>Student Performance Predictor</h1>
+        </div>
+    
+        <div class="header-right">
+          <button class="image-button"><i class="fa fa-search"><img src="https://figma-files-public.s3.amazonaws.com/dba19db7f1f90864dea50ce6/675c9962-b723-4250-9bb6-4fcf960ba476" alt="Search"></i></button>
+          <button class="image-button" onclick="window.location.href='../profile/profile.html';"><i class="fa fa-profile"><img src="https://figma-files-public.s3.amazonaws.com/dba19db7f1f90864dea50ce6/251b2fba-ddf7-4a3b-a453-000c0228edce" alt="Profile"></i></button>
+        </div>
+    
+    </header>
+    <div class="banner">
+        <div class="banner-overlay">
+          <div id="YdqJgHB2HCChfFhkpp6oqRqr" name="Background" class="layout-node" style="flex:none; overflow:hidden; position:absolute; left:0px; right:0px; top:0px; bottom:0px;">
+
+            <div name="Background Shape 1" class="layout-node" style="overflow:visible; background:rgba(6,174,212,1); opacity:0.7; position:absolute; left:0px; right:0px; top:24px; bottom:0px;">
+              <img src="https://figma-files-public.s3.amazonaws.com/409a65746e442a2f599fef01/61e6c044-69d6-483f-a38c-ba72789db3f6" style="display:block; min-width:100%; min-height:100%;">
+            </div>
+            
+            <div name="Background Shape 2" class="layout-node" style="overflow:hidden; background:rgba(22,76,99,1); opacity:0.5; transform:matrix(1,0.07,-0.07,1,0,0); transform-origin:top left; position:absolute; left:-56.61px; right:-65.27px; top:0px; bottom:-61.7px;">
+              <img src="https://figma-files-public.s3.amazonaws.com/409a65746e442a2f599fef01/f37a8b8c-6cea-4fb7-9356-b3786a5bc5a9" style="display:block; min-width:100%; min-height:100%;">
+            </div>
+      
+          </div>
+      
+          <div id="HP6zH8nnfhZxEjAu9td7zbHu" name="Title and Text" class="layout-node" style="flex:none; display:flex; flex-direction:column; justify-content:flex-start; align-items:center; gap:16px; overflow:visible; position:relative; align-self:stretch; flex-grow:0; flex-shrink:0; flex-basis:auto;">
+      
+            <div name="Title" class="text-node" style="flex:none; overflow:visible; font-family:Arial,sans-serif; font-size:32px; font-weight:600; color:rgba(255,255,255,1); text-align:center; line-height:40px; position:relative; align-self:stretch; flex-grow:0; flex-shrink:0; flex-basis:auto;">User List</div>
+      
+          </div>
+              
+              <button onclick="window.location.href='addnewuser.html';" style="margin-top: 20px; color: white; font-size: 16px; font-weight: 600;cursor: pointer; flex:none; display:flex; flex-direction:row; justify-content:center; align-items:center; padding:8px 24px 8px 24px;; gap:8px; overflow:hidden; border-radius:8px; background: rgba(6,174,212,1); border:1px rgba(6,174,212,1) solid; position:relative; width:auto; height:fit-content; ">Add New</button>
+        </div>
+    </div>
+    <div class="user-list">
+        <div class="pagination">
+            <a href="#"><</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">></a>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <button class="bottom-nav-button" onclick="window.location.href='../home/home.html';">Home</button>
+        <button class ="bottom-nav-button" onclick="window.location.href='../course/course.html';">Courses</button>
+        <button class="bottom-nav-button" onclick="window.location.href='../students/students.html';">Students</button>
+        <button class="bottom-nav-button" onclick="window.location.href='../prediction/prediction.html';">Predictions</button>
+      </nav>
+
+      <nav class="menu" id="menu" hidden>
+        <div class="menu-section">
+            <button class="menu-button" onclick="window.location.href='../home/home.html';">Home</button>
+        </div>
+    
+        <div class="menu-section">
+            <button class ="menu-button" onclick="window.location.href='../course/course.html';">Courses</button>
+        </div>
+    
+        <div class="menu-section">
+            <button class="menu-button" onclick="window.location.href='../students/students.html';">Students</button>
+        </div>
+    
+        <div class="menu-section">
+            <button class="menu-button" onclick="window.location.href='../prediction/prediction.html';">Predictions</button>
+        </div>
+    
+        <hr>
+    
+        <div class="menu-section">
+          <button class="menu-button">Search</button>
+        </div>
+    
+        <hr>
+    
+        <div class="menu-section">
+          <button class="menu-button" onclick="window.location.href='../profile/profile.html';">Profile</button>
+        </div>
+    
+        <div class="menu-section">
+            <button class="menu-button" onclick="window.location.href='../authentication/login.html';">Log out</button>
+        </div>
+    
+        <hr>
+    
+        <div class="menu-section">
+          <button class="menu-button" onclick="window.location.href='manageusers.html';">Manage users</button>
+        </div>
+    
+      </nav>
+
+    <script src="manageusers.js"></script>
+
+</body>
+</html>

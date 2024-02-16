@@ -1,0 +1,223 @@
+body {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background:black;
+}
+.report {
+    overflow: hidden;
+    align-items:flex-start;
+    position:static;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    z-index:10;
+
+
+    text-align: left;
+}
+.report h1{
+    overflow: hidden;
+    align-items:flex-start;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    z-index:10;
+    margin: 0;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    position: relative;
+    margin-top: 34px;
+
+    margin-left: 250px;
+    font-size: 24px;
+    color: white;
+}
+
+/* .report hr{
+    overflow: hidden;
+    align-items:flex-start;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    z-index:10;
+    position: relative;
+
+    margin-left: 200px;
+    margin-right: 800px;
+    margin-bottom: 20px;
+    border: 1px solid white;
+} */
+table {
+    overflow: hidden;
+    align-items:flex-start;
+    display:block;
+    flex: none;
+    flex-direction: column;
+    z-index:10;
+    position: relative;
+
+
+
+    border-collapse: collapse;
+    width: 50%;
+    margin-left: 250px;
+    /* margin-right: auto; */
+    margin-top: 50px;
+}
+tr, td, th {
+    overflow: hidden;
+    align-items:flex-start;
+    flex: none;
+    flex-direction: column;
+    z-index:10;
+    position: relative;
+
+
+    width: 50%;
+    padding: 10px;
+    color: white;
+    border: 2px solid white;
+}
+header {
+    background:rgba(63,63,70,1);
+    color: white;
+    flex: none;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0px 4px 0px;
+    font-size: 10px;
+    overflow: hidden;
+    position: relative;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    height: fit-content;
+}
+.header-left {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+}
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background:rgba(63,63,70,1);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+  
+.bottom-nav-button {
+    font-size: 18px;
+    border: none;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+.bottom-nav-button:hover {
+    color: rgba(6,174,212,1);
+}
+.search-button,
+.profile-button {
+  font-size: 24px;
+  margin-left: 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: rgba(6,174,212,1);
+}
+.image-button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+    
+}
+  
+.image-button img {
+    width: 20px;
+    height: 20px;
+}
+  
+.image-button:hover {
+    opacity: 0.8;
+    color: rgba(6,174,212,1);
+}
+.hamburger-menu {
+    font-size: 16px;
+    margin-right: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.menu {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 10%;
+    height: 100%;
+    background:rgba(63,63,70,1);
+    box-shadow:0px 8px 24px rgba(0,0,0,0.64);
+    padding: 10px 20px;
+}
+  
+.menu-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+  
+.menu-button {
+    font-size: 18px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 10px;    
+    color: white;
+}
+
+.menu-button:hover {
+    color: rgba(6,174,212,1);
+}
+
+.navigation {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.navigation img {
+    height: 30px;
+}
+.navigation .icons {
+    display: flex;
+    align-items: center;
+}
+.navigation .icons img {
+    height: 20px;
+    margin-left: 10px;
+}

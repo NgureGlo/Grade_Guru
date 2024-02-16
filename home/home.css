@@ -1,0 +1,200 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background:black;
+}
+  
+header {
+    background:rgba(63,63,70,1);
+    color: white;
+    flex: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0px 4px 0px;
+    font-size: 10px;
+    overflow: hidden;
+    position: relative;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    height: fit-content;
+    z-index: 3;
+}
+  
+.header-left {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+}
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background:rgba(63,63,70,1);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 3;
+}
+  
+.bottom-nav-button {
+    font-size: 18px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.bottom-nav-button:hover {
+  color: rgba(6,174,212,1);
+}
+.hamburger-menu {
+    font-size: 16px;
+    margin-right: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+  
+.menu {
+    position: absolute;
+    top: 50px;
+    width: 10%;
+    height: 100%;
+    background:rgba(63,63,70,1);
+    box-shadow:0px 8px 24px rgba(0,0,0,0.64);
+    padding: 10px 20px;
+    /* display: inline; */
+    z-index: 3;
+}
+  
+.menu-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+}
+  
+.menu-button {
+    font-size: 18px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 10px;
+}
+.menu-button:hover {
+    color: rgba(6,174,212,1);
+}
+.search-button {
+    font-size: 24px;
+    margin-left: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.profile-button {
+  font-size: 24px;
+  margin-left: 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.search-button:hover,
+.profile-button:hover {
+  font-size: 24px;
+  margin-left: 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: rgba(6,174,212,1);
+}
+
+.image-button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+  
+.image-button img {
+    width: 20px;
+    height: 20px;
+}
+.image-button:hover {
+    color: rgba(6,174,212,1);
+}
+  
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
+}
+  
+.welcome-message {
+    text-align: center;
+    overflow: hidden;
+   align-items:flex-start;
+   position:absolute;
+   width: 100%;
+   display: flex;
+   flex: none;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height:100vh;
+   z-index:2;
+   left:0px;
+   right:0px;
+   top:0px;
+   color: white;
+  }
+  
+.fa {
+    margin-right: 5px;
+}
+
+.navigation {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.navigation img {
+    height: 30px;
+}
+.navigation .icons {
+    display: flex;
+    align-items: center;
+}
+.navigation .icons img {
+    height: 20px;
+    margin-left: 10px;
+}
+  

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login and Sign Up</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="tabs">
+      <button id="login-tab" class="active">Login</button>
+      <button id="signup-tab">Sign Up</button>
+    </div>
+
+    <div class="forms">
+      <form id="login-form" class="active">
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" name="login-email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" name="login-password" required>
+        </div>
+
+        <div class="form-group">
+          <input type="checkbox" id="login-remember" name="login-remember">
+          <label for="login-remember">Remember me</label>
+        </div>
+
+        <div class="form-group">
+          <button onclick="window.location.href='../home/home.html';">Login</button>
+        </div>
+
+      </form>
+
+      <form id="signup-form">
+        <div class="form-group">
+          <label for="signup-name">Name</label>
+          <input type="text" id="signup-name" name="signup-name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-email">Email</label>
+          <input type="email" id="signup-email" name="signup-email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" name="signup-password" required>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-confirm">Confirm Password</label>
+          <input type="password" id="signup-confirm" name="signup-confirm" required>
+        </div>
+
+        <div class="form-group">
+          <input type="checkbox" id="signup-agree" name="signup-agree" required>
+          <label for="signup-agree">I agree to the terms and conditions</label>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" id="signup-submit">Sign Up</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+
+</body>
+
+</html>

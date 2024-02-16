@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User Profile</title>
+    <link rel="stylesheet" href="editprofile.css">
+</head>
+<body>
+    <header>
+        <div class="profile">
+            <img src="https://images.unsplash.com/photo-1489410342162-b4b300a0bb15?ixid=M3wxMzQ4Mzl8MHwxfHNlYXJjaHwzfHx3b21hbiUyMGluJTIwYnVzaW5lc3MlMjBhdHRpcmV8ZW58MHwwfHx8MTcwNjQ4OTM1MHww&ixlib=rb-4.0.3&fm=jpg&w=2560" alt="User Image" class="profile-image">
+            <h1>Mrs. Susan Clark</h1>
+
+            <div class="header-left">
+                <button class="back-button" onclick="window.location.href='profile.html';"><i class="fa fa-back"><img src="https://figma-files-public.s3.amazonaws.com/dba19db7f1f90864dea50ce6/89fe1a1f-f5d2-4b61-8c33-eef574bb8902" alt="Back"></i></button>
+            </div>
+
+            <div class="header-right">
+                <button class="logout-button" onclick="window.location.href='../authentication/login.html';"><i class="fa fa-logout"><img src="https://figma-files-public.s3.amazonaws.com/dba19db7f1f90864dea50ce6/2b369612-b138-4951-b36b-862493eb105c" alt="Logout"></i></button>
+            </div>
+
+        </div>  
+        
+    </header>
+
+    <form>
+        <form id="profile-form" class="active"></form>
+          <div class="form-group">
+              <label for="userName">Name</label>
+              <input type="text" id="userName" value="Mrs. Susan Clark">
+          </div>
+          <div class="form-group">
+              <label for="userEmail">Email</label>
+              <input type="text" id="userEmail" value="susan.clark@school.edu">
+          </div>
+          <div class="form-group">
+            <label for="userPhoto">Photo</label>
+            <button class="delete-button">Delete Image</button>
+        </div>
+          <div class="form-group">
+              <label for="userRole">Role</label>
+              <select id="userRole">
+                  <option value="userRole">Select Option</option>
+                  <option value="userRole">Administrator</option>
+                  <option value="userRole">Educator</option>
+              </select>
+          </div>
+    </form>
+
+        <!-- <div class="body">
+            <p class="label">Name:</p>
+            <p>Mrs. Susan Clark</p>
+            <p class="label">Email:</p>
+            <p>susan.clark@school.edu</p>
+            <p class="label">Role:</p>
+            <p>Administrator</p>
+        </div> -->
+    </div>
+</body>
+</html>
+
