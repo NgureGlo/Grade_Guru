@@ -41,13 +41,20 @@
         </div>
     </div>
     <div class="user-list">
-        <div class="pagination">
-            <a href="#"><</a>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">></a>
-        </div>
+      <table id="user-table">
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>User Name</th>
+            <th>User Email</th>
+            <th>Role</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="user-table-body">
+          <!-- Table rows will be populated dynamically -->
+        </tbody>
+      </table>
     </div>
 
     <nav class="bottom-nav">

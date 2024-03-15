@@ -40,20 +40,33 @@
       
           </div>
               
-              <button onclick="window.location.href='addnewstudent.html';" style="margin-top: 20px; color: white; font-size: 16px; font-weight: 600;cursor: pointer; flex:none; display:flex; flex-direction:row; justify-content:center; align-items:center; padding:8px 24px 8px 24px;; gap:8px; overflow:hidden; border-radius:8px; background: rgba(6,174,212,1); border:1px rgba(6,174,212,1) solid; position:relative; width:auto; height:fit-content; ">Add New</button>
+              <button id = "add_new" onclick="window.location.href='addnewstudent.html';" style="margin-top: 20px; color: white; font-size: 16px; font-weight: 600;cursor: pointer; flex:none; display:flex; flex-direction:row; justify-content:center; align-items:center; padding:8px 24px 8px 24px;; gap:8px; overflow:hidden; border-radius:8px; background: rgba(6,174,212,1); border:1px rgba(6,174,212,1) solid; position:relative; width:auto; height:fit-content; ">Add New</button>
 
         </div>
 
     </div>
 
     <div class="student-list">
-        <div class="pagination">
+      <table id="student-table">
+        <thead>
+          <tr>
+            <th>Registration Number</th>
+            <th>Name</th>
+            <th>Course Code</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="student-table-body">
+          <!-- Table rows will be populated dynamically -->
+        </tbody>
+      </table>
+        <!-- <div class="pagination">
             <a href="#"><</a>
             <a href="#" class="active">1</a>
             <a href="#">2</a>
             <a href="#">3</a>
             <a href="#">></a>
-        </div>
+        </div> -->
     </div>
 
     <nav class="bottom-nav">
@@ -98,11 +111,13 @@
     
         <hr>
     
-        <div class="menu-section">
+        <div class="menu-section" id = "manage_users">
             <button class="menu-button" onclick="window.location.href='../manageusers/manageusers.html';">Manage Users</button>
         </div>
     
       </nav>
+
+      <script src="../user.js"></script>
 
     <script src="students.js"></script>
 

@@ -16,9 +16,8 @@
 
     </header>
 
-    <form>
-        <form id="addnewstudent-form" class="active"></form>
-
+    
+    <form id="addnewstudent-form" class="active">
         <div class="form-group">
             <label for="studentRegNo">Student Registration Number</label>
             <input type="text" id="studentRegNo" placeholder="e.g. J31/1234/2019">
@@ -30,16 +29,15 @@
         </div>
 
         <div class="form-group">
-            <label for="courseId">Course ID</label>
-            <select id="courseId">
-                <option value="selectCourseID">Select Course ID</option>
-                <option value="SIT 400">SIT 100</option>
-            </select>
+            <label for="courseCode">Course Code</label>
+            <input type="text" id="courseCode" placeholder="SIT 400">
         </div>
         
         <button id="cancelButton">Cancel</button> 
-        <button id="submitButton">Submit</button> 
-    </div>
+        <button type = "submit" id="submitButton">Submit</button>
+    </form>
+
+    
 
     <script src='addnewstudent.js'></script>    
 </body>

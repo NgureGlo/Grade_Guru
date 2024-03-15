@@ -80,54 +80,45 @@
     
         <hr>
     
-        <div class="menu-section">
+        <div class="menu-section" id = "manage_users">
           <button class="menu-button" onclick="window.location.href='../manageusers/manageusers.html';">Manage Users</button>
         </div>
     
       </nav>
       
-    <form>
-      <form id="prediction-form" class="active"></form>
-        <div class="form-group">
-            <label for="studentRegNo">Registration Number:</label>
-            <input type="text" id="studentRegNo" placeholder="e.g. J31/1234/2019">
-        </div>
-        <div class="form-group">
-            <label for="studentName">Student Name:</label>
-            <input type="text" id="studentName" placeholder="e.g. Jane Doe">
-        </div>
-        <div class="form-group">
-            <label for="courseLevel">Course Level:</label>
-            <select id="courseLevel">
-                <option value="Level 100">Level 100</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="courseName">Course Name:</label>
-            <input type="text" id="courseName" placeholder="Computer Science">
-        </div>
-        <div class="form-group">
-            <label for="cat1Score">CAT 1 Score:</label>
-            <input type="number" id="cat1Score" value="1">
-        </div>
-        <div class="form-group">
-            <label for="cat2Score">CAT 2 Score:</label>
-            <input type="number" id="cat2Score" value="1">
-        </div>
-        <div class="form-group">
-            <label for="assignmentScore">Assignment Score:</label>
-            <input type="number" id="assignmentScore" value="1">
-        </div>
-        <div class="form-group">
-          <label for="projectScore">Project Score:</label>
-          <input type="number" id="projectScore" value="1">
+    <form form id="prediction-form" class="active">
+      <div class="form-group">
+          <label for="studentRegNo">Registration Number:</label>
+          <input type="text" id="studentRegNo" placeholder="e.g. J31/1234/2019">
+      </div>
+      <div class="form-group">
+          <label for="courseCode">Course Code:</label>
+          <input type="text" id="courseCode" placeholder="e.g. SIT 207">
+      </div>
+      <div class="form-group">
+          <label for="cat1Score">CAT 1 Score:</label>
+          <input type="number" step = "0.01" id="cat1Score" value="1">
+      </div>
+      <div class="form-group">
+          <label for="cat2Score">CAT 2 Score:</label>
+          <input type="number" step = "0.01" id="cat2Score" value="1">
+      </div>
+      <div class="form-group">
+          <label for="assignmentScore">Assignment Score:</label>
+          <input type="number" step = "0.01" id="assignmentScore" value="1">
+      </div>
+      <div class="form-group">
+        <label for="projectScore">Project Score:</label>
+        <input type="number" step = "0.01" id="projectScore" value="1">
       </div>
 
-        <div class="form-group">
-          <button onclick="window.location.href='../results/results.html';">Predict</button>
-        </div>
+      <div class="form-group">
+        <button type = "predict" id = "predictButton">Predict</button>
+      </div>
 
     </form>
+
+    <script src="../user.js"></script>
 
     <script src="prediction.js"></script>
 </body>

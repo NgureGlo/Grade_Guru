@@ -7,4 +7,8 @@ function toggleMenu() {
     }
   }
   
-  ``
+document.addEventListener('DOMContentLoaded', () => {
+  if (role != 'Administrator'){
+    document.getElementById('manage_users').style.display = 'none';
+  }
+})

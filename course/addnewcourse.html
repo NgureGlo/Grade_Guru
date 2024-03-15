@@ -16,23 +16,21 @@
 
     </header>
 
-    <form>
-        <form id="addnewcourse-form" class="active"></form>
-
+    <form id="addnewcourse-form" class="active">
+    
         <div class="form-group">
             <label for="courseLevel">Course Level</label>
             <select id="courseLevel">
-                <option value="selectLevel">Select Level</option>
-                <option value="Level 100">Level 100</option>
-                <option value="Level 200">Level 200</option>
-                <option value="Level 300">Level 300</option>
-                <option value="Level 400">Level 400</option>
+                <option value="Level_100">Level 100</option>
+                <option value="Level_200">Level 200</option>
+                <option value="Level_300">Level 300</option>
+                <option value="Level_400">Level 400</option>
             </select>
         </div>
 
         <div class="form-group">
-            <label for="courseId">Course ID</label>
-            <input type="text" id="courseId" placeholder="SIT 400">
+            <label for="courseCode">Course Code</label>
+            <input type="text" id="courseCode" placeholder="SIT 400">
         </div>
 
         <div class="form-group">
@@ -41,8 +39,8 @@
         </div>
         
         <button id="cancelButton">Cancel</button> 
-        <button id="submitButton">Submit</button> 
-    </div>
+        <button type="submit" id="submitButton">Submit</button> 
+    </form>
 
     <script src="addnewcourse.js"></script>    
 </body>

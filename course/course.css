@@ -255,3 +255,27 @@ header {
 .fa {
     margin-right: 5px;
 }
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    
+}
+
+th {
+    background-color: rgba(24,24,27,1);
+}
+
+.delete-btn {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}

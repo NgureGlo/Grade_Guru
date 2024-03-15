@@ -40,18 +40,8 @@
             <div name="Title" class="text-node" style="flex:none; overflow:visible; font-family:Arial,sans-serif; font-size:32px; font-weight:600; color:rgba(255,255,255,1); text-align:center; line-height:40px; position:relative; align-self:stretch; flex-grow:0; flex-shrink:0; flex-basis:auto;">Course List</div>
       
           </div>
-
-          <!-- <div id="ADtyHm2S5JmEaufYELYs7Xbj" name="Actions" class="layout-node" style="flex:none; display:flex; flex-direction:row; justify-content:center; align-items:flex-start; gap:24px; overflow:visible; position:relative; align-self:stretch; flex-grow:0; flex-shrink:0; flex-basis:auto;"> -->
-				
-            <!-- <div id="Z43oAo7Fctcc9k47Tra8CveA" name="Create" class="layout-node action-node action-navigate cursor-pointer" style="flex:none; display:flex; flex-direction:row; justify-content:center; align-items:center; padding:8px 24px 8px 24px;; gap:8px; overflow:hidden; border-radius:8px; background: rgba(6,174,212,1); border:1px rgba(6,174,212,1) solid; position:relative; width:auto; height:fit-content;" tabindex="0" data-screenid="6912e1f77a5f447cde40926f" data-rowpassingoption="current"> -->
               
-              <button onclick="window.location.href='addnewcourse.html';" style="margin-top: 20px; color: white; font-size: 16px; font-weight: 600;cursor: pointer; flex:none; display:flex; flex-direction:row; justify-content:center; align-items:center; padding:8px 24px 8px 24px;; gap:8px; overflow:hidden; border-radius:8px; background: rgba(6,174,212,1); border:1px rgba(6,174,212,1) solid; position:relative; width:auto; height:fit-content; ">Add new</button>
-              
-           
-            <!-- </div> -->
-
-          <!-- </div> -->
-      
+              <button id = "add_new" onclick="window.location.href='addnewcourse.html';" style="margin-top: 20px; color: white; font-size: 16px; font-weight: 600;cursor: pointer; flex:none; display:flex; flex-direction:row; justify-content:center; align-items:center; padding:8px 24px 8px 24px;; gap:8px; overflow:hidden; border-radius:8px; background: rgba(6,174,212,1); border:1px rgba(6,174,212,1) solid; position:relative; width:auto; height:fit-content; ">Add new</button>
       </div>
 
       </div>
@@ -59,13 +49,19 @@
     </div>
     
     <div class="course-list">
-        <div class="pagination">
-            <a href="#"><</a>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">></a>
-        </div>
+      <table id="course-table">
+        <thead>
+          <tr>
+            <th>Course Level</th>
+            <th>Course Code</th>
+            <th>Course Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="course-table-body">
+          <!-- Table rows will be populated dynamically -->
+        </tbody>
+      </table>
     </div>
 
     <nav class="bottom-nav">
@@ -111,11 +107,13 @@
     
         <hr>
     
-        <div class="menu-section">
+        <div class="menu-section" id = "manage_users">
             <button class="menu-button" onclick="window.location.href='../manageusers/manageusers.html';">Manage Users</button>
         </div>
     
       </nav>
+
+      <script src="../user.js"></script>
 
   <script src="course.js"></script>
 
