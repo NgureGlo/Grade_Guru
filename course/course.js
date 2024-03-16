@@ -8,7 +8,14 @@ function toggleMenu() {
   }
 
   function loadCourses(){
-    fetch('http://127.0.0.1:5000/courses', {
+    let url = '';
+    if(role == 'Administrator'){
+      url = 'http://127.0.0.1:5000/courses';
+    }else{
+      url = `http://127.0.0.1:5000/lecturer_courses/${uid}`;
+    }
+
+    fetch(url, {
       method: 'GET',
       headers: {
         "Content-type": "application/json"
