@@ -5,6 +5,18 @@ body {
     font-family: Arial, sans-serif;
     background:black;
 }
+
+#blur-layer {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(63,63,70,0.5); /* Semi-transparent white */
+    backdrop-filter: blur(5px); /* Apply a blur effect */
+    display: none; /* Hide initially */
+    z-index: 3;
+}
   
 header {
     background:rgba(63,63,70,1);

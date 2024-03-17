@@ -1,9 +1,12 @@
 function toggleMenu() {
+    const blurLayer = document.getElementById('blur-layer');
     var menu = document.getElementById("menu");
     if (menu.style.display === "block") {
       menu.style.display = "none";
+      blurLayer.style.display = "none"
     } else {
       menu.style.display = "block";
+      blurLayer.style.display = "block"
     }
   }
 
@@ -116,7 +119,7 @@ fetch(url, {
 })
 .then((body) => {
     student_data = processData(body.data)
-    createChart(student_data);
+    createChart(student_data, student_reg_no);
 })
 }
 
@@ -136,7 +139,7 @@ fetch(url, {
 })
 .then((body) => {
     student_data = processCourseData(body.data)
-    createAverageChart(student_data);
+    createAverageChart(student_data, course_code);
 })
 }
 
@@ -156,7 +159,7 @@ fetch(url, {
 })
 .then((body) => {
     student_data = processLevelData(body.data)
-    createAverageCourseLevelChart(student_data);
+    createAverageCourseLevelChart(student_data, course_level);
 })
 }
 
@@ -175,7 +178,7 @@ return examData;
 
 var examChart = null;
 
-function createChart(data) {
+function createChart(data, student_reg_no) {
     if (!data || Object.keys(data).length === 0) {        
         showEmptyMessage()
 
@@ -196,7 +199,7 @@ function createChart(data) {
         datasets.push({
             label: courseCode,
             data: scores,
-            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+            backgroundColor: 'rgba(54, 162, 235, 0.7)',
             borderColor: 'rgba(54, 162, 235, 1)',
             borderWidth: 1
         });
@@ -215,13 +218,40 @@ function createChart(data) {
             datasets: datasets
         },
         options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: student_reg_no, // Specify your graph title here
+                    font: {
+                        size: 20 // Adjust the font size as needed
+                    }
+                },
+                legend: {
+                    display: false
+                }
+            },
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Expected Scores' // Specify your label text here
+                    }
+                },
+                x: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Course Code' // Specify your label text here
+                    }
                 }
             }
         }
     });
+
+    // Add click event listener to download button
+    const studentDownloadButton = document.getElementById('studentDownloadButton');
+    studentDownloadButton.addEventListener('click', function() { downloadPDF(examChart) });
 }
 
 
@@ -250,7 +280,7 @@ function processCourseData(data) {
 
 var averageChart = null;
 
-function createAverageChart(data) {
+function createAverageChart(data, course_code) {
     if (!data || Object.keys(data).length === 0) {
         showEmptyAverageMessage();
 
@@ -284,20 +314,49 @@ function createAverageChart(data) {
             datasets: [{
                 label: 'Average Score',
                 data: averages,
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                backgroundColor: 'rgba(255, 99, 132, 0.7)',
                 borderColor: 'rgba(255, 99, 132, 1)',
                 borderWidth: 1
             }]
         },
         options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: course_code, // Specify your graph title here
+                    font: {
+                        size: 20 // Adjust the font size as needed
+                    }
+                },
+                legend: {
+                    display: false
+                }
+            },
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Expected Scores' // Specify your label text here
+                    }
+                },
+                x: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Registration Numbers' // Specify your label text here
+                    }
                 }
             }
         }
     });
+
+    // Add click event listener to download button
+    const studentDownloadButton = document.getElementById('courseDownloadButton');
+    studentDownloadButton.addEventListener('click', function() { downloadPDF(averageChart) });
 }
+
+
 
 function showEmptyAverageMessage() {
     const emptyMessage = document.getElementById('emptyAverageMessage');
@@ -324,7 +383,7 @@ function processLevelData(data) {
 
 var averageCourseLevelChart = null;
 
-function createAverageCourseLevelChart(data) {
+function createAverageCourseLevelChart(data, course_level) {
     if (!data || Object.keys(data).length === 0) {
         showEmptyAverageLevelMessage();
 
@@ -336,7 +395,7 @@ function createAverageCourseLevelChart(data) {
         return;
     }
 
-    hideEmptyAverageMessage();
+    hideEmptyAverageLevelMessage();
 
     const labels = Object.keys(data);
     const averages = labels.map(courseCode => {
@@ -358,20 +417,48 @@ function createAverageCourseLevelChart(data) {
             datasets: [{
                 label: 'Average Score',
                 data: averages,
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(99, 255, 132, 0.7)',
+                borderColor: 'rgba(99, 255, 132, 1)',
                 borderWidth: 1
             }]
         },
         options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: course_level, // Specify your graph title here
+                    font: {
+                        size: 20 // Adjust the font size as needed
+                    }
+                },
+                legend: {
+                    display: false
+                }
+            },
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Expected Scores' // Specify your label text here
+                    }
+                },
+                x: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Course Code' // Specify your label text here
+                    }
                 }
             }
         }
     });
+
+    // Add click event listener to download button
+    const studentDownloadButton = document.getElementById('levelDownloadButton');
+    studentDownloadButton.addEventListener('click', function() { downloadPDF(averageCourseLevelChart) });
 }
+
 
 function showEmptyAverageLevelMessage() {
     const emptyMessage = document.getElementById('emptyAverageLevelMessage');
@@ -382,3 +469,19 @@ function hideEmptyAverageLevelMessage() {
     const emptyMessage = document.getElementById('emptyAverageLevelMessage');
     emptyMessage.style.display = 'none';
 }
+
+function downloadPDF (chart){
+    const { jsPDF } = window.jspdf;
+    // Create a new jsPDF instance
+    const pdf = new jsPDF();
+
+    // Convert the chart canvas to an image data URL
+    const chartDataURL = chart.toBase64Image();
+
+    // Add the image to the PDF document
+    pdf.addImage(chartDataURL, 'PNG', 10, 10, 180, 100); // Adjust dimensions as needed
+
+    // Save the PDF file
+    pdf.save('chart.pdf');
+}
+

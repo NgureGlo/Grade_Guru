@@ -175,6 +175,7 @@ header {
     background:rgba(63,63,70,1);
     box-shadow:0px 8px 24px rgba(0,0,0,0.64);
     padding: 10px 20px;
+    z-index: 11;
 }
   
 .menu-section {
@@ -220,4 +221,16 @@ header {
 .navigation .icons img {
     height: 20px;
     margin-left: 10px;
+}
+
+#blur-layer {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(63,63,70,0.5); /* Semi-transparent white */
+    backdrop-filter: blur(5px); /* Apply a blur effect */
+    display: none; /* Hide initially */
+    z-index: 11;
 }

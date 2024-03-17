@@ -1,87 +1,89 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    width: 400px;
-    margin: 50px auto;
-    border: 2px solid #f0f0f0;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .tabs {
-    display: flex;
-  }
-  
-  .tabs button {
-    width: 50%;
-    padding: 10px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #f0f0f0;
-  }
-  
-  .tabs button.active {
-    background-color: #f9a825;
-  }
-  
-  .forms {
-    padding: 20px;
-  }
-  
-  .forms form {
-    display: none;
-  }
-  
-  .forms form.active {
-    display: block;
-  }
-  
-  .form-group {
-    margin-bottom: 10px;
-  }
-  
-  .form-group label {
-    display: block;
-    font-size: 14px;
-    color: #333333;
-  }
-  
-  .form-group input {
-    display: block;
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-    outline: none;
-  }
-  
-  .form-group input[type="checkbox"] {
-    display: inline-block;
-    width: auto;
-    margin-right: 5px;
-  }
-  
-  .form-group button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    cursor: pointer;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #f9a825;
-  }
-  
-  .form-group button:hover {
-    background-color: #f57f17;
-  }
-  
+body {
+  font-family: Arial, sans-serif;
+  background-color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 100px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabs {
+  display: flex;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #333;
+  font-size: 16px;
+  outline: none;
+  border-bottom: 2px solid transparent;
+}
+
+.tabs button.active {
+  border-bottom: 2px solid rgba(6, 174, 212, 1);
+  color: rgba(6, 174, 212, 1);
+}
+
+.forms {
+  margin-top: 20px;
+}
+
+.forms form {
+  display: none;
+}
+
+.forms form.active {
+  display: block;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgba(6, 174, 212, 1);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: rgba(0, 150, 185, 1);
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+  vertical-align: middle;
+}

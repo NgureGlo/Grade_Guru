@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Performance Dashboard</title>
     <link rel="stylesheet" href="reports.css">
+    <script src = "https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"> </script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
     <header>
         <div class="header-left">
             <button class="hamburger-menu" onclick="toggleMenu()"><img src="https://figma-files-public.s3.amazonaws.com/dba19db7f1f90864dea50ce6/f33b666c-00bd-4768-895d-0fd9aded58be"></button>
             <h1>Student Performance Predictor</h1>
-        </div>
+        </div> 
         
         <div class="header-right">
           <button class="image-button"><i class="fa fa-search"><img src="https://figma-files-public.s3.amazonaws.com/dba19db7f1f90864dea50ce6/675c9962-b723-4250-9bb6-4fcf960ba476" alt="Search"></i></button>
@@ -19,6 +21,8 @@
         </div>
         
     </header>
+
+    <div id="blur-layer"></div>
     
     <nav class="bottom-nav">
         <button class="bottom-nav-button" onclick="window.location.href='../home/home.html';">Home</button>
@@ -83,7 +87,7 @@
                 </select>
                 <canvas id="student-performance-chart" width="800" height="200"></canvas>
                 <p id="emptyMessage" class="empty-message">No data available</p>
-                <button onclick="downloadPDF('student-performance-chart')">Download as PDF</button>
+                <button id = "studentDownloadButton">Download as PDF</button>
             </div>
         </div>
         <div class="bottom-half">
@@ -95,7 +99,7 @@
                 </select>
                 <canvas id="course-performance-chart" width="800" height="400"></canvas>
                 <p id="emptyAverageMessage" class="empty-message">No data available</p>
-                <button onclick="downloadPDF('course-performance-chart')">Download as PDF</button>
+                <button id = "courseDownloadButton">Download as PDF</button>
             </div>
             <div class="graph-container">
                 <h2>Performance by Level</h2>
@@ -108,12 +112,12 @@
                 </select>
                 <canvas id="level-performance-chart" width="800" height="400"></canvas>
                 <p id="emptyAverageLevelMessage" class="empty-message">No data available</p>
-                <button onclick="downloadPDF('level-performance-chart')">Download as PDF</button>
+                <button id = "levelDownloadButton">Download as PDF</button>
             </div>
         </div>
     </div>
     
-    <script src = "https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"> </script>
+
     <script src="../user.js"></script>
     <script src="reports.js"></script>
 </body>

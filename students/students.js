@@ -1,11 +1,14 @@
 function toggleMenu() {
-    var menu = document.getElementById("menu");
-    if (menu.style.display === "block") {
-      menu.style.display = "none";
-    } else {
-      menu.style.display = "block";
-    }
+  const blurLayer = document.getElementById('blur-layer');
+  var menu = document.getElementById("menu");
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+    blurLayer.style.display = "none"
+  } else {
+    menu.style.display = "block";
+    blurLayer.style.display = "block"
   }
+}
 
   function loadStudents(){
     let url = '';
@@ -46,7 +49,15 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function deleteStudent(studentId) {
-  fetch('http://127.0.0.1:5000/student/delete/'+studentId, {
+
+  // Show the confirmation dialog box
+  const confirmed = window.confirm('Are you sure you want to delete?');
+
+  // Check if the user confirmed
+  if (confirmed) {
+    // Perform the delete action here
+
+    fetch('http://127.0.0.1:5000/student/delete/'+studentId, {
       method: 'POST',
       headers: {
         "Content-type": "application/json"
@@ -58,6 +69,7 @@ function deleteStudent(studentId) {
       alert(body.message);
       location.reload();
     })  
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
