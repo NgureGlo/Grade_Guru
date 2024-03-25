@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Performance Predictor</title>
-    <link rel="stylesheet" href="prediction.css">
+    <link rel="stylesheet" href="studentprediction.css">
 </head>
 <body>
 
@@ -44,8 +44,8 @@
         <button class="bottom-nav-button" onclick="window.location.href='../home/home.html';">Home</button>
         <button class ="bottom-nav-button" id="course" onclick="window.location.href='../course/course.html';">Courses</button>
         <button class="bottom-nav-button" id="student" onclick="window.location.href='../students/students.html';">Students</button>
-        <button class="bottom-nav-button" id="prediction" onclick="window.location.href='prediction.html';">Predictions</button>
-        <button class="bottom-nav-button" id="stdprediction" onclick="window.location.href='../studentprediction/studentprediction.html';">Predictions</button>
+        <button class="bottom-nav-button" id="prediction" onclick="window.location.href='../prediction/prediction.html';">Predictions</button>
+        <button class="bottom-nav-button" id="stdprediction" onclick="window.location.href='studentprediction.html';">Predictions</button>
         <button class="bottom-nav-button" id="reports" onclick="window.location.href='../reports/reports.html';">Reports</button>
         <button class="bottom-nav-button" id="stdreport" onclick="window.location.href='../studentreport/studentreport.html';">Reports</button>
   </nav>
@@ -68,8 +68,8 @@
         </div>
 
         <div class="menu-section" id="stdprediction_nav">
-          <button class="menu-button" onclick="window.location.href='../studentprediction/studentprediction.html';">Predictions</button>
-        </div>
+            <button class="menu-button" onclick="window.location.href='studentprediction.html';">Predictions</button>
+          </div>
 
         <div class="menu-section" id="reports_nav">
           <button class="menu-button" onclick="window.location.href='../reports/reports.html';">Reports</button>
@@ -106,13 +106,11 @@
     <form form id="prediction-form" class="active">
       <div class="form-group">
           <label for="studentRegNo">Registration Number:</label>
-          <select id="select-studentRegNo">
-            <option value="">Select Registration Number</option>
-          </select>
+          <input type="text" id="studentRegNo" placeholder="e.g. J31/1234/2019" disabled>
       </div>
       <div class="form-group">
           <label for="courseCode">Course Code:</label>
-          <select id="select-courseCode">
+          <select id="courseCode">
             <option value="">Select Course</option>
           </select>
       </div>
@@ -141,6 +139,6 @@
 
     <script src="../user.js"></script>
 
-    <script src="prediction.js"></script>
+    <script src="studentprediction.js"></script>
 </body>
 </html>

@@ -68,10 +68,12 @@
 
     <nav class="bottom-nav">
         <button class="bottom-nav-button" onclick="window.location.href='../home/home.html';">Home</button>
-        <button class ="bottom-nav-button" onclick="window.location.href='course.html';">Courses</button>
-        <button class="bottom-nav-button" onclick="window.location.href='../students/students.html';">Students</button>
-        <button class="bottom-nav-button" onclick="window.location.href='../prediction/prediction.html';">Predictions</button>
-        <button class="bottom-nav-button" onclick="window.location.href='../reports/reports.html';">Reports</button>
+        <button class ="bottom-nav-button" id="courset" onclick="window.location.href='course.html';">Courses</button>
+        <button class="bottom-nav-button" id="student" onclick="window.location.href='../students/students.html';">Students</button>
+        <button class="bottom-nav-button" id="prediction" onclick="window.location.href='../prediction/prediction.html';">Predictions</button>
+        <button class="bottom-nav-button" id="stdprediction" onclick="window.location.href='../studentprediction/studentprediction.html';">Predictions</button>
+        <button class="bottom-nav-button" id="reports" onclick="window.location.href='../reports/reports.html';">Reports</button>
+        <button class="bottom-nav-button" id="stdreport" onclick="window.location.href='../studentreport/studentreport.html';">Reports</button>
       </nav>
 
       <nav class="menu" id="menu" hidden>
@@ -79,20 +81,28 @@
             <button class="menu-button" onclick="window.location.href='../home/home.html';">Home</button>
         </div>
     
-        <div class="menu-section">
+        <div class="menu-section" id="course_nav">
             <button class ="menu-button" onclick="window.location.href='course.html';">Courses</button>
         </div>
     
-        <div class="menu-section">
+        <div class="menu-section" id="student_nav">
             <button class="menu-button" onclick="window.location.href='../students/students.html';">Students</button>
         </div>
     
-        <div class="menu-section">
-            <button class="menu-button" onclick="window.location.href='../prediction/prediction.html';">Predictions</button>
+        <div class="menu-section" id="prediction_nav">
+          <button class="menu-button" onclick="window.location.href='../prediction/prediction.html';">Predictions</button>
         </div>
 
-        <div class="menu-section">
+        <div class="menu-section" id="stdprediction_nav">
+          <button class="menu-button" onclick="window.location.href='../studentprediction/studentprediction.html';">Predictions</button>
+        </div>
+
+        <div class="menu-section" id="reports_nav">
           <button class="menu-button" onclick="window.location.href='../reports/reports.html';">Reports</button>
+        </div>
+
+        <div class="menu-section" id="stdreport_nav">
+          <button class="menu-button" onclick="window.location.href='../studentreport/studentreport.html';">Reports</button>
         </div>
     
         <hr>

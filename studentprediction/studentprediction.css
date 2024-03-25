@@ -5,89 +5,25 @@ body {
     padding: 0;
     background:black;
 }
-.report {
-    overflow: hidden;
-    align-items:flex-start;
-    position:static;
-    display: flex;
-    flex: none;
-    flex-direction: column;
-    z-index:10;
 
-
-    text-align: left;
-}
-.report h1{
-    overflow: hidden;
-    align-items:flex-start;
-    display: flex;
-    flex: none;
-    flex-direction: column;
-    z-index:10;
-    margin: 0;
-    font-size: 30px;
-    color: white;
-    text-align: center;
-    position: relative;
-    margin-top: 34px;
-
-    margin-left: 250px;
-    font-size: 24px;
-    color: white;
+#blur-layer {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(63,63,70,0.5); /* Semi-transparent white */
+    backdrop-filter: blur(5px); /* Apply a blur effect */
+    display: none; /* Hide initially */
+    z-index: 11;
 }
 
-/* .report hr{
-    overflow: hidden;
-    align-items:flex-start;
-    display: flex;
-    flex: none;
-    flex-direction: column;
-    z-index:10;
-    position: relative;
-
-    margin-left: 200px;
-    margin-right: 800px;
-    margin-bottom: 20px;
-    border: 1px solid white;
-} */
-table {
-    overflow: hidden;
-    align-items:flex-start;
-    display:block;
-    flex: none;
-    flex-direction: column;
-    z-index:10;
-    position: relative;
-
-
-
-    border-collapse: collapse;
-    width: 50%;
-    margin-left: 250px;
-    /* margin-right: auto; */
-    margin-top: 50px;
-}
-tr, td, th {
-    overflow: hidden;
-    align-items:flex-start;
-    flex: none;
-    flex-direction: column;
-    z-index:10;
-    position: relative;
-
-
-    width: 50%;
-    padding: 10px;
-    color: white;
-    border: 2px solid white;
-}
 header {
     background:rgba(63,63,70,1);
     color: white;
     flex: none;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
     justify-content: space-between;
     align-items: center;
     padding: 4px 0px 4px 0px;
@@ -108,6 +44,39 @@ header {
     display: flex;
     align-items: center;
 }
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+.heading h2 {
+    overflow: hidden;
+    align-items:flex-start;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    z-index:10;
+    margin: 0;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    position: relative;
+    margin-top: 34px;
+    margin-left: 250px;
+}
+.heading hr{
+    overflow: hidden;
+    align-items:flex-start;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    z-index:10;
+    position: relative;
+
+    margin-left: 200px;
+    margin-right: 800px;
+    margin-bottom: 20px;
+    border: 1px solid white;
+}
 .bottom-nav {
     position: fixed;
     bottom: 0;
@@ -118,6 +87,7 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    z-index: 11;
 }
   
 .bottom-nav-button {
@@ -133,6 +103,82 @@ header {
 .bottom-nav-button:hover {
     color: rgba(6,174,212,1);
 }
+
+.fa {
+    margin-right: 5px;
+}
+
+.form-group {
+    overflow: hidden;
+    align-items:flex-start;
+    position:static;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    z-index:10;
+
+    margin-bottom: 15px;
+    /* padding-left: 20%;
+    padding-right: 20%; */
+    width: 100%;
+}
+label {
+    overflow: hidden;
+    align-items:center;
+    position: relative;
+    display: inline-block;
+    flex: none;
+    flex-direction: column;
+    z-index:10;
+
+    width: 15%;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 250px;
+    color: white;
+}
+
+input,
+select {
+    overflow: hidden;
+    align-items:center;
+    position: static;
+    display: inline;
+    flex: none;
+    flex-direction: column;
+    z-index:10; 
+
+    width: 20%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-left: 250px;
+}
+.form-group button {
+    overflow: hidden;
+    align-items:flex-start;
+    display: block;
+    flex: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index:10; 
+
+    width: 5%;
+    padding: 10px;
+    border: none;
+    margin-left: 25%;
+    margin-top: 50px;
+    margin-bottom: 5%;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: rgba(6,174,212,1);
+  }
+
 .search-button,
 .profile-button {
   font-size: 24px;
@@ -147,7 +193,6 @@ header {
     background-color: transparent;
     padding: 0;
     cursor: pointer;
-    
 }
   
 .image-button img {
@@ -156,7 +201,6 @@ header {
 }
   
 .image-button:hover {
-    opacity: 0.8;
     color: rgba(6,174,212,1);
 }
 .hamburger-menu {
@@ -191,8 +235,8 @@ header {
     background-color: transparent;
     cursor: pointer;
     display: block;
-    margin-bottom: 10px;    
-    color: white;
+    margin-bottom: 10px;
+    color: white;    
 }
 
 .menu-button:hover {
@@ -221,37 +265,4 @@ header {
 .navigation .icons img {
     height: 20px;
     margin-left: 10px;
-}
-
-#blur-layer {
-    position: fixed;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(63,63,70,0.5); /* Semi-transparent white */
-    backdrop-filter: blur(5px); /* Apply a blur effect */
-    display: none; /* Hide initially */
-    z-index: 11;
-}
-
-#downloadPdfButton {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 40px;
-    z-index: 11;
-    position: relative; /* Add position relative */
-    left: 50%; /* Move button 50% to the right */
-    transform: translateX(-50%); /* Adjust position to center */
-}
-
-/* Hover effect */
-#downloadPdfButton:hover {
-    background-color: #0056b3;
-    z-index: 11;
 }

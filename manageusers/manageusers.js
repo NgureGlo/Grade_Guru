@@ -1,3 +1,29 @@
+document.addEventListener('DOMContentLoaded', () => {
+  if (role != 'Administrator'){
+    document.getElementById('manage_users').style.display = 'none';
+  }
+  if (role === 'Student'){
+    document.getElementById('course').style.display = 'none';
+    document.getElementById('student').style.display = 'none';
+    document.getElementById('course_nav').style.display = 'none';
+    document.getElementById('student_nav').style.display = 'none';
+    document.getElementById('prediction').style.display = 'none';
+    document.getElementById('prediction_nav').style.display = 'none';
+    document.getElementById('reports').style.display = 'none';
+    document.getElementById('reports_nav').style.display = 'none';
+    document.getElementById('stdreport_nav').style.display = 'block';
+    document.getElementById('stdreport').style.display = 'block';
+    document.getElementById('stdprediction_nav').style.display = 'block';
+    document.getElementById('stdprediction').style.display = 'block';
+  }
+  else{
+    document.getElementById('stdreport_nav').style.display = 'none';
+    document.getElementById('stdreport').style.display = 'none';
+    document.getElementById('stdprediction_nav').style.display = 'none';
+    document.getElementById('stdprediction').style.display = 'none';
+  }
+})
+
 function toggleMenu() {
   const blurLayer = document.getElementById('blur-layer');
   var menu = document.getElementById("menu");
@@ -28,6 +54,7 @@ function toggleMenu() {
                     row.innerHTML = `
                         <td>${user.id}</td>
                         <td>${user.name}</td>
+                        <td>${user.reg_no}</td>
                         <td>${user.email}</td>
                         <td>${user.role}</td>
                         <td><button class="delete-btn" onclick="deleteUser(${user.id})">Delete</button></td>

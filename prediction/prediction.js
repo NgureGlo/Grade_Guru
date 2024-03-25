@@ -1,3 +1,31 @@
+document.addEventListener('DOMContentLoaded', () => {
+  if (role != 'Administrator'){
+    document.getElementById('manage_users').style.display = 'none';
+  }
+  if (role === 'Student'){
+    document.getElementById('course').style.display = 'none';
+    document.getElementById('student').style.display = 'none';
+    document.getElementById('course_nav').style.display = 'none';
+    document.getElementById('student_nav').style.display = 'none';
+    document.getElementById('prediction').style.display = 'none';
+    document.getElementById('prediction_nav').style.display = 'none';
+    document.getElementById('reports').style.display = 'none';
+    document.getElementById('reports_nav').style.display = 'none';
+    document.getElementById('stdreport_nav').style.display = 'block';
+    document.getElementById('stdreport').style.display = 'block';
+    document.getElementById('stdprediction_nav').style.display = 'block';
+    document.getElementById('stdprediction').style.display = 'block';
+  }else{
+    document.getElementById('stdreport_nav').style.display = 'none';
+    document.getElementById('stdreport').style.display = 'none';
+    document.getElementById('stdprediction_nav').style.display = 'none';
+    document.getElementById('stdprediction').style.display = 'none';
+  }
+
+  loadStudents();
+  loadCourses();
+})
+
 function toggleMenu() {
   const blurLayer = document.getElementById('blur-layer');
   var menu = document.getElementById("menu");
@@ -11,9 +39,72 @@ function toggleMenu() {
 }
 
 
+function loadStudents() {
+  let url = '';
+  if(role == 'Administrator'){
+      url = 'http://127.0.0.1:5000/view_students';
+  }else{
+      url = `http://127.0.0.1:5000/lecturer_students/${uid}`;
+  }
+  
+  fetch(url, {
+      method: 'GET',
+      headers: {
+          "Content-type": "application/json"
+      },
+      }).then(res =>{
+      return res.json()
+      } )
+      .then((body) => {
+  
+      // Populate student select dropdown
+      const studentSelect = document.getElementById('select-studentRegNo');
+      body.data.forEach(student => {
+          const option = document.createElement('option');
+          option.value = student.reg_no;
+          option.textContent = student.reg_no;
+          studentSelect.appendChild(option);
+      });
+  
+      console.log(body);
+      })  
+}
+
+function loadCourses() {
+  let url = '';
+  if(role == 'Administrator'){
+      url = 'http://127.0.0.1:5000/courses';
+  }else{
+      url = `http://127.0.0.1:5000/lecturer_courses/${uid}`;
+  }
+  
+  fetch(url, {
+      method: 'GET',
+      headers: {
+          "Content-type": "application/json"
+      },
+      }).then(res =>{
+      return res.json()
+      } )
+      .then((body) => {
+  
+      // Populate course select dropdown
+      const courseSelect = document.getElementById('select-courseCode');
+      body.data.forEach(course => {
+          const option = document.createElement('option');
+          option.value = course.course_code;
+          option.textContent = course.course_code;
+          courseSelect.appendChild(option);
+      });
+  
+      console.log(body);
+      })  
+  }
+
+
 const predictionForm = document.getElementById("prediction-form");
-const studentRegNo = document.getElementById("studentRegNo");
-const courseCode = document.getElementById("courseCode");
+const studentRegNo = document.getElementById("select-studentRegNo");
+const courseCode = document.getElementById("select-courseCode");
 const courseLevel = document.getElementById("courseLevel");
 const courseName = document.getElementById("courseName");
 const cat1Score = document.getElementById("cat1Score");
@@ -60,7 +151,7 @@ predictionForm.addEventListener('submit', (e) => {
       "Content-type": "application/json",
     },
     body: JSON.stringify({
-      "student_reg_no": reg,
+      "reg_no": reg,
       "course_code" : code,
       "cat_1" : cat1,
       "cat_2" : cat2,
@@ -83,10 +174,4 @@ predictionForm.addEventListener('submit', (e) => {
     }
     }
   )
-})
-
-document.addEventListener('DOMContentLoaded', () => {
-  if (role != 'Administrator'){
-    document.getElementById('manage_users').style.display = 'none';
-  }
 })

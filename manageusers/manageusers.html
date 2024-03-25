@@ -40,7 +40,7 @@
       
           </div>
               
-              <!-- <button onclick="window.location.href='addnewuser.html';" style="margin-top: 20px; color: white; font-size: 16px; font-weight: 600;cursor: pointer; flex:none; display:flex; flex-direction:row; justify-content:center; align-items:center; padding:8px 24px 8px 24px;; gap:8px; overflow:hidden; border-radius:8px; background: rgba(6,174,212,1); border:1px rgba(6,174,212,1) solid; position:relative; width:auto; height:fit-content; ">Add New</button> -->
+              <button onclick="window.location.href='addnewuser.html';" style="margin-top: 20px; color: white; font-size: 16px; font-weight: 600;cursor: pointer; flex:none; display:flex; flex-direction:row; justify-content:center; align-items:center; padding:8px 24px 8px 24px;; gap:8px; overflow:hidden; border-radius:8px; background: rgba(6,174,212,1); border:1px rgba(6,174,212,1) solid; position:relative; width:auto; height:fit-content; ">Add New</button>
         </div>
     </div>
     <div class="user-list">
@@ -49,6 +49,7 @@
           <tr>
             <th>User ID</th>
             <th>User Name</th>
+            <th>Registration Number</th>
             <th>User Email</th>
             <th>Role</th>
             <th>Action</th>
@@ -64,7 +65,8 @@
         <button class="bottom-nav-button" onclick="window.location.href='../home/home.html';">Home</button>
         <button class ="bottom-nav-button" onclick="window.location.href='../course/course.html';">Courses</button>
         <button class="bottom-nav-button" onclick="window.location.href='../students/students.html';">Students</button>
-        <button class="bottom-nav-button" onclick="window.location.href='../prediction/prediction.html';">Predictions</button>
+        <button class="bottom-nav-button" id="prediction" onclick="window.location.href='../prediction/prediction.html';">Predictions</button>
+        <button class="bottom-nav-button" id="reports" onclick="window.location.href='../reports/reports.html';">Reports</button>
       </nav>
 
       <nav class="menu" id="menu" hidden>
@@ -80,8 +82,16 @@
             <button class="menu-button" onclick="window.location.href='../students/students.html';">Students</button>
         </div>
     
-        <div class="menu-section">
-            <button class="menu-button" onclick="window.location.href='../prediction/prediction.html';">Predictions</button>
+        <div class="menu-section" id="prediction_nav">
+          <button class="menu-button" onclick="window.location.href='../prediction/prediction.html';">Predictions</button>
+        </div>
+
+        <div class="menu-section" id="reports_nav">
+          <button class="menu-button" onclick="window.location.href='../reports/reports.html';">Reports</button>
+        </div>
+
+        <div class="menu-section" id="stdreport_nav">
+          <button class="menu-button" onclick="window.location.href='../studentreport/studentreport.html';">Reports</button>
         </div>
     
         <hr>

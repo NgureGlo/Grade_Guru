@@ -16,12 +16,17 @@
 
     </header>
 
-    <form>
-        <form id="addnewuser-form" class="active"></form>
+    <form id="addnewuser-form" class="active">
+        
 
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" placeholder="">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Registration Number</label>
+            <input type="text" id="regno" placeholder="">
         </div>
 
         <div class="form-group">
@@ -30,8 +35,8 @@
         </div>
 
         <div class="form-group">
-            <label for="profilePhoto">Profile Photo</label>
-            <button class="profilePhoto-button">Upload Image</button>
+            <label for="password">Password</label>
+            <input type="text" id="password" placeholder="">
         </div>
 
         <div class="form-group">
@@ -40,12 +45,13 @@
                 <option value="Select Role">Select Role</option>
                 <option value="Administrator">Administrator</option>
                 <option value="Educator">Educator</option>
+                <option value="Student">Student</option>
             </select>
         </div>
 
         <button id="cancelButton">Cancel</button> 
         <button id="submitButton">Submit</button> 
-    </div>
+    </form>
 
     <script src="addnewuser.js"></script>    
 </body>

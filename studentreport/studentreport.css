@@ -1,86 +1,75 @@
 body {
-    box-sizing: border-box;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background:black;
+    background-color: #222;
+    color: #fff;
 }
-.report {
-    overflow: hidden;
-    align-items:flex-start;
-    position:static;
-    display: flex;
-    flex: none;
-    flex-direction: column;
-    z-index:10;
 
-
-    text-align: left;
-}
-.report h1{
-    overflow: hidden;
-    align-items:flex-start;
-    display: flex;
-    flex: none;
-    flex-direction: column;
-    z-index:10;
-    margin: 0;
-    font-size: 30px;
-    color: white;
+h1, h2 {
+    margin-top: 0px;
     text-align: center;
-    position: relative;
-    margin-top: 34px;
-
-    margin-left: 250px;
-    font-size: 24px;
-    color: white;
+    color: #fff;
 }
 
-/* .report hr{
-    overflow: hidden;
-    align-items:flex-start;
+.container {
+    height:75vh;
     display: flex;
-    flex: none;
     flex-direction: column;
-    z-index:10;
-    position: relative;
-
-    margin-left: 200px;
-    margin-right: 800px;
-    margin-bottom: 20px;
-    border: 1px solid white;
-} */
-table {
-    overflow: hidden;
-    align-items:flex-start;
-    display:block;
-    flex: none;
-    flex-direction: column;
-    z-index:10;
-    position: relative;
-
-
-
-    border-collapse: collapse;
-    width: 50%;
-    margin-left: 250px;
-    /* margin-right: auto; */
-    margin-top: 50px;
+    min-height: 100vh;
+    margin-bottom: 50px;
 }
-tr, td, th {
-    overflow: hidden;
-    align-items:flex-start;
-    flex: none;
+
+.top-half {
+    flex: 0.9;
+    display: flex;
     flex-direction: column;
-    z-index:10;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+
+.graph-container {
+    flex: 1;
+    margin: 0 10px;
+    padding: 20px;
+    border: 1px solid #555;
     position: relative;
+    background-color: #333;
+}
 
+canvas {
+    width: 100%;
+    height: 100%;
+}
 
-    width: 50%;
-    padding: 10px;
+.chart {
+    height: 100%;
+    width: 100%;
+}
+
+.graph-container button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
     color: white;
-    border: 2px solid white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .bottom-half {
+        flex-direction: column;
+    }
+}
+
 header {
     background:rgba(63,63,70,1);
     color: white;
@@ -118,6 +107,7 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    z-index: 3;
 }
   
 .bottom-nav-button {
@@ -175,7 +165,7 @@ header {
     background:rgba(63,63,70,1);
     box-shadow:0px 8px 24px rgba(0,0,0,0.64);
     padding: 10px 20px;
-    z-index: 11;
+    z-index: 1;
 }
   
 .menu-section {
@@ -199,28 +189,32 @@ header {
     color: rgba(6,174,212,1);
 }
 
-.navigation {
-    background-color: #333;
+input,
+select {
+    width: 25%;
+    padding:8px 12px 8px 12px;
     color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    position: relative;
+    top: 0px; left: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(41, 37, 36);
+    font-size:16px;
+    font-weight:400;
 }
-.navigation img {
-    height: 30px;
+
+#student-select{
+    width: 15%;
 }
-.navigation .icons {
-    display: flex;
-    align-items: center;
-}
-.navigation .icons img {
-    height: 20px;
-    margin-left: 10px;
+
+.empty-message {
+    display: none; /* Hide the message by default */
+    text-align: center;
+    color: #999;
+    font-style: italic;
 }
 
 #blur-layer {
@@ -232,26 +226,5 @@ header {
     background-color: rgba(63,63,70,0.5); /* Semi-transparent white */
     backdrop-filter: blur(5px); /* Apply a blur effect */
     display: none; /* Hide initially */
-    z-index: 11;
-}
-
-#downloadPdfButton {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 40px;
-    z-index: 11;
-    position: relative; /* Add position relative */
-    left: 50%; /* Move button 50% to the right */
-    transform: translateX(-50%); /* Adjust position to center */
-}
-
-/* Hover effect */
-#downloadPdfButton:hover {
-    background-color: #0056b3;
-    z-index: 11;
+    z-index: 1;
 }

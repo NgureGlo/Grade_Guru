@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Performance Dashboard</title>
-    <link rel="stylesheet" href="reports.css">
+    <link rel="stylesheet" href="studentreport.css">
     <script src = "https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"> </script>
     <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
@@ -28,9 +28,9 @@
         <button class="bottom-nav-button" onclick="window.location.href='../home/home.html';">Home</button>
         <button class ="bottom-nav-button" id="course" onclick="window.location.href='../course/course.html';">Courses</button>
         <button class="bottom-nav-button" id="student" onclick="window.location.href='../students/students.html';">Students</button>
-        <button class="bottom-nav-button" onclick="window.location.href='../prediction/prediction.html';">Predictions</button>
-        <button class="bottom-nav-button" id="reports" onclick="window.location.href='reports.html';">Reports</button>
-        <button class="bottom-nav-button" id="stdreport" onclick="window.location.href='../studentreport/studentreport.html';">Reports</button>
+        <button class="bottom-nav-button" id="prediction" onclick="window.location.href='../prediction/prediction.html';">Predictions</button>
+        <button class="bottom-nav-button" id="stdprediction" onclick="window.location.href='../studentprediction/studentprediction.html';">Predictions</button>
+        <button class="bottom-nav-button" id="stdreport" onclick="window.location.href='reports.html';">Reports</button>
     </nav>
     
     <nav class="menu" id="menu" hidden>
@@ -54,13 +54,9 @@
             <button class="menu-button" onclick="window.location.href='../studentprediction/studentprediction.html';">Predictions</button>
         </div>
 
-        <div class="menu-section" id="reports_nav">
-            <button class="menu-button" onclick="window.location.href='reports.html';">Reports</button>
-        </div>
-
         <div class="menu-section" id="stdreport_nav">
-            <button class="menu-button" onclick="window.location.href='../studentreport/studentreport.html';">Reports</button>
-        </div>
+            <button class="menu-button" onclick="window.location.href='studentreport.html';">Reports</button>
+          </div>
         
         <hr>
         
@@ -89,45 +85,19 @@
     <div class="container">
         <div class="top-half">
             <div class="graph-container">
-                <h2>Individual Student Performance</h2>
-                <select id="student-select">
-                    <option value="">Select Student</option>
-                    <!-- Options will be populated dynamically using JavaScript -->
-                </select>
-                <canvas id="student-performance-chart" width="800" height="200"></canvas>
+                <h2>Performance by Course</h2>
+
+                <h4 id="studentRegNo" style="font-size: 40px; text-align:center;"></h4>
+ 
+                <canvas id="student-performance-chart" height="450"></canvas>
                 <p id="emptyMessage" class="empty-message">No data available</p>
                 <button id = "studentDownloadButton">Download as PDF</button>
-            </div>
-        </div>
-        <div class="bottom-half">
-            <div class="graph-container">
-                <h2>Performance by Course</h2>
-                <select id="course-select">
-                    <option value="">Select Course</option>
-                    <!-- Options will be populated dynamically using JavaScript -->
-                </select>
-                <canvas id="course-performance-chart" width="800" height="400"></canvas>
-                <p id="emptyAverageMessage" class="empty-message">No data available</p>
-                <button id = "courseDownloadButton">Download as PDF</button>
-            </div>
-            <div class="graph-container">
-                <h2>Performance by Level</h2>
-                <select id="level-select">
-                    <option value="">Select Level</option>
-                    <option value="Level_100">Level 100</option>
-                    <option value="Level_200">Level 200</option>
-                    <option value="Level_300">Level 300</option>
-                    <option value="Level_400">Level 400</option>
-                </select>
-                <canvas id="level-performance-chart" width="800" height="400"></canvas>
-                <p id="emptyAverageLevelMessage" class="empty-message">No data available</p>
-                <button id = "levelDownloadButton">Download as PDF</button>
             </div>
         </div>
     </div>
     
 
     <script src="../user.js"></script>
-    <script src="reports.js"></script>
+    <script src="studentreport.js"></script>
 </body>
 </html>

@@ -1,3 +1,29 @@
+document.addEventListener('DOMContentLoaded', () => {
+    if (role != 'Administrator'){
+      document.getElementById('manage_users').style.display = 'none';
+    }
+    if (role === 'Student'){
+        document.getElementById('course').style.display = 'none';
+        document.getElementById('student').style.display = 'none';
+        document.getElementById('course_nav').style.display = 'none';
+        document.getElementById('student_nav').style.display = 'none';
+        document.getElementById('prediction').style.display = 'none';
+        document.getElementById('prediction_nav').style.display = 'none';
+        document.getElementById('reports').style.display = 'none';
+        document.getElementById('reports_nav').style.display = 'none';
+        document.getElementById('stdreport_nav').style.display = 'block';
+        document.getElementById('stdreport').style.display = 'block';
+        document.getElementById('stdprediction_nav').style.display = 'block';
+        document.getElementById('stdprediction').style.display = 'block';
+      }
+      else{
+        document.getElementById('stdreport_nav').style.display = 'none';
+        document.getElementById('stdreport').style.display = 'none';
+        document.getElementById('stdprediction_nav').style.display = 'none';
+        // document.getElementById('stdprediction').style.display = 'none';
+      }
+  })
+
 function toggleMenu() {
     const blurLayer = document.getElementById('blur-layer');
     var menu = document.getElementById("menu");
@@ -12,11 +38,6 @@ function toggleMenu() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (role != 'Administrator'){
-      document.getElementById('manage_users').style.display = 'none';
-    }else{
-      document.getElementById('add_new').style.display = 'none';
-    }
 
     select_student = document.getElementById("student-select")
     select_student.addEventListener('change', () =>{
@@ -62,8 +83,8 @@ fetch(url, {
     const studentSelect = document.getElementById('student-select');
     body.data.forEach(student => {
         const option = document.createElement('option');
-        option.value = student.student_reg_no;
-        option.textContent = student.student_reg_no;
+        option.value = student.reg_no;
+        option.textContent = student.reg_no;
         studentSelect.appendChild(option);
     });
 
@@ -112,7 +133,7 @@ fetch(url, {
         "Content-type": "application/json"
     },
     body: JSON.stringify({
-        "student_reg_no": student_reg_no
+        "reg_no": student_reg_no
     })
 }).then(res => {
     return res.json()
@@ -164,23 +185,44 @@ fetch(url, {
 }
 
 // creating student performance chart 
+function getRandomColor() {
+    // Generate random values for RGB components
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
 
+    // Construct the color string in hexadecimal format
+    return '#' + r.toString(16).padStart(2, '0') + g.toString(16).padStart(2, '0') + b.toString(16).padStart(2, '0');
+}
+
+// creating student performance chart 
 function processData(data) {
-const examData = {};
-data.forEach(entry => {
-    if (!examData[entry.course_code]) {
-        examData[entry.course_code] = [];
+    const examData = {};
+    const examCount = {}; // Keep track of the number of exams for each course
+
+    // Process the data and calculate average expected exam scores
+    data.forEach(entry => {
+        if (!examData[entry.course_code]) {
+            examData[entry.course_code] = 0;
+            examCount[entry.course_code] = 0;
+        }
+        examData[entry.course_code] += entry.expected_exam;
+        examCount[entry.course_code]++;
+    });
+
+    // Calculate average expected exam scores for each course
+    for (const courseCode in examData) {
+        examData[courseCode] /= examCount[courseCode];
     }
-    examData[entry.course_code].push(entry.expected_exam);
-});
-return examData;
+
+    return examData;
 }
 
 var examChart = null;
 
-function createChart(data, student_reg_no) {
-    if (!data || Object.keys(data).length === 0) {        
-        showEmptyMessage()
+function createChart(data, reg_no) {
+    if (!data || Object.keys(data).length === 0) {
+        showEmptyMessage();
 
         // Destroy the existing chart instance if it exists
         if (examChart) {
@@ -192,20 +234,18 @@ function createChart(data, student_reg_no) {
 
     hideEmptyMessage();
 
-    const labels = Object.keys(data);
-    const datasets = [];
+    const labels = [];
+    const examScores = [];
+    const backgroundColors = [];
 
-    for (const [courseCode, scores] of Object.entries(data)) {
-        datasets.push({
-            label: courseCode,
-            data: scores,
-            backgroundColor: 'rgba(54, 162, 235, 0.7)',
-            borderColor: 'rgba(54, 162, 235, 1)',
-            borderWidth: 1
-        });
+    // Extract labels and exam scores
+    for (const [courseCode, averageScore] of Object.entries(data)) {
+        labels.push(courseCode);
+        examScores.push(averageScore);
+        backgroundColors.push(getRandomColor()); // Generate random color for each bar
     }
 
-    // Destroy the existing chart instance if it exists
+    // Create the chart with the data
     if (examChart) {
         examChart.destroy();
         examChart = null;
@@ -215,13 +255,18 @@ function createChart(data, student_reg_no) {
         type: 'bar',
         data: {
             labels: labels,
-            datasets: datasets
+            datasets: [{
+                label: 'Average Expected Exam Score',
+                data: examScores,
+                backgroundColor: backgroundColors,
+                borderWidth: 1
+            }]
         },
         options: {
             plugins: {
                 title: {
                     display: true,
-                    text: student_reg_no, // Specify your graph title here
+                    text: reg_no, // Specify your graph title here
                     font: {
                         size: 20 // Adjust the font size as needed
                     }
@@ -235,7 +280,7 @@ function createChart(data, student_reg_no) {
                     beginAtZero: true,
                     title: {
                         display: true,
-                        text: 'Expected Scores' // Specify your label text here
+                        text: 'Average Expected Exam Score' // Specify your label text here
                     }
                 },
                 x: {
@@ -270,10 +315,10 @@ function hideEmptyMessage() {
 function processCourseData(data) {
     const examData = {};
     data.forEach(entry => {
-        if (!examData[entry.student_reg_no]) {
-            examData[entry.student_reg_no] = [];
+        if (!examData[entry.reg_no]) {
+            examData[entry.reg_no] = [];
         }
-        examData[entry.student_reg_no].push(entry.expected_exam);
+        examData[entry.reg_no].push(entry.expected_exam);
     });
     return examData;
 }
@@ -294,10 +339,13 @@ function createAverageChart(data, course_code) {
 
     hideEmptyAverageMessage();
 
+    const backgroundColors = [];
+
     const labels = Object.keys(data);
     const averages = labels.map(student_reg_no => {
         const scores = data[student_reg_no];
         const sum = scores.reduce((acc, val) => acc + val, 0);
+        backgroundColors.push(getRandomColor()); // Generate random color for each bar
         return sum / scores.length;
     });
 
@@ -314,8 +362,7 @@ function createAverageChart(data, course_code) {
             datasets: [{
                 label: 'Average Score',
                 data: averages,
-                backgroundColor: 'rgba(255, 99, 132, 0.7)',
-                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: backgroundColors,
                 borderWidth: 1
             }]
         },
@@ -397,10 +444,13 @@ function createAverageCourseLevelChart(data, course_level) {
 
     hideEmptyAverageLevelMessage();
 
+    const backgroundColors = [];
+
     const labels = Object.keys(data);
     const averages = labels.map(courseCode => {
         const scores = data[courseCode];
         const sum = scores.reduce((acc, val) => acc + val, 0);
+        backgroundColors.push(getRandomColor()); // Generate random color for each bar
         return sum / scores.length;
     });
 
@@ -417,8 +467,7 @@ function createAverageCourseLevelChart(data, course_level) {
             datasets: [{
                 label: 'Average Score',
                 data: averages,
-                backgroundColor: 'rgba(99, 255, 132, 0.7)',
-                borderColor: 'rgba(99, 255, 132, 1)',
+                backgroundColor: backgroundColors,
                 borderWidth: 1
             }]
         },

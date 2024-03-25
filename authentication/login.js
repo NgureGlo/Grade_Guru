@@ -4,6 +4,7 @@ const signupTab = document.getElementById("signup-tab");
 const loginForm = document.getElementById("login-form");
 const signupForm = document.getElementById("signup-form");
 const signupName = document.getElementById("signup-name");
+const signupRegno = document.getElementById("signup-regno");
 const signupEmail = document.getElementById("signup-email");
 const signupPassword = document.getElementById("signup-password");
 const loginEmail = document.getElementById("login-email");
@@ -48,9 +49,11 @@ loginForm.addEventListener('submit', (e) => {
     if (body.data){
       const role = body.data.role;
       const uid = body.data.uid;
+      const reg_no = body.data.reg_no;
 
       localStorage.setItem('role',role);
       localStorage.setItem('uid',uid);
+      localStorage.setItem('reg_no',reg_no);
 
       window.location.href='../home/home.html';
 
@@ -64,6 +67,7 @@ loginForm.addEventListener('submit', (e) => {
 signupForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const name = signupName.value
+  const reg_no = signupRegno.value
   const email = signupEmail.value
   const password = signupPassword.value
   fetch('http://127.0.0.1:5000/register', {
@@ -73,6 +77,7 @@ signupForm.addEventListener('submit', (e) => {
     },
     body: JSON.stringify({
       "name": name,
+      "reg_no": reg_no,
       "email" : email,
       "password" : password
     })
