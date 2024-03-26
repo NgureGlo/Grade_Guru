@@ -77,27 +77,27 @@ document.addEventListener('DOMContentLoaded', async () => {
       const assignment = parseFloat(assignmentScore.value)
       const project = parseFloat(projectScore.value)
     
-      if (!(cat1 >= -5 && cat1 <= 5)) {
+      if (!(cat1 >= 0 && cat1 <= 5)) {
         // Cat 1 score is not within the valid range
-        alert('Cat 1 score must be between -5 and 5');
+        alert('Cat 1 score must be between 0 and 5');
         return;
       }
     
-      if (!(cat2 >= -5 && cat2 <= 5)) {
+      if (!(cat2 >= 0 && cat2 <= 5)) {
         // Cat 1 score is not within the valid range
-        alert('Cat 2 score must be between -5 and 5');
+        alert('Cat 2 score must be between 0 and 5');
         return;
       }
     
-      if (!(assignment >= -10 && assignment <= 10)) {
+      if (!(assignment >= 0 && assignment <= 10)) {
         // Cat 1 score is not within the valid range
-        alert('Assignment score must be between -10 and 10');
+        alert('Assignment score must be between 0 and 10');
         return;
       }
       
-      if (!(project >= -30 && project <= 30)) {
+      if (!(project >= 0 && project <= 30)) {
         // Cat 1 score is not within the valid range
-        alert('Project score must be between -30 and 30');
+        alert('Project score must be between 0 and 30');
         return;
       }
     
