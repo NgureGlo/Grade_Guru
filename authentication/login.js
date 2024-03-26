@@ -70,7 +70,7 @@ signupForm.addEventListener('submit', (e) => {
   const reg_no = signupRegno.value
   const email = signupEmail.value
   const password = signupPassword.value
-  fetch('http://127.0.0.1:5000/register', {
+  fetch('http://127.0.0.1:5000/register_educator', {
     method: 'POST',
     headers: {
       "Content-type": "application/json"
